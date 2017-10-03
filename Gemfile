@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-#use Ham1 for templates
-gem 'ham1'
+#use Haml for templates
+gem 'haml'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
