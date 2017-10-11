@@ -4,6 +4,14 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+def create
+  @movie = Movie.create!(movie_params)
+  params.require(:movie)
+  params[:movie].permit(:title,:rating,:release_date)
+  flash[:notice] = "#{@movie.title} was successfully created."
+  redirect_to movies_path
+end
+
 def show
   id = params[:id] # retrieve movie ID from URI route
   @movie = Movie.find(id) # look up movie by unique ID
